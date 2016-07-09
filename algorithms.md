@@ -37,6 +37,7 @@ applies that function in parallel.
 
     system = System(initialization_parameters)
 
+    # outputs = map(function, inputs)
     outputs = system.map(function, inputs)
 
 
@@ -45,9 +46,9 @@ applies that function in parallel.
     for a in L1:
         for b in L2:
             if a > b:
-                outputs.add(f(a, b) - g(a, b))
+                outputs.add(f(a, b))
             else:
-                outputs.add(g(a, b) - f(a, b))
+                outputs.add(g(a, b))
 
 <img src="images/unstructured.svg">
 
@@ -61,7 +62,7 @@ No restrictions here, but also no magic.  Developer retains full control.
 *  Submit tasks to framework one-by-one.
 *  Run tasks in the background and collect when finished.
 
-.
+<hr>
 
     future = system.submit(function, *args, **kwargs)
 
@@ -75,7 +76,7 @@ No restrictions here, but also no magic.  Developer retains full control.
 *  Submit tasks to framework one-by-one.
 *  Run tasks in the background and collect when finished.
 
-.
+<hr>
 
     futures = []
     for i in inputs:
@@ -89,16 +90,27 @@ No restrictions here, but also no magic.  Developer retains full control.
 *  Submit tasks to framework one-by-one.
 *  Run tasks in the background and collect when finished.
 
-.
+<hr>
 
-    futures = []
-    for i in inputs:
-        if i > 0:
-            futures.append(system.submit(f, i))
-        else:
-            futures.append(system.submit(g, i))
+    outputs = set()                     # Sequential
+    for a in L1:
+        for b in L2:
+            if a > b:
+                outputs.add(f(a, b))
+            else:
+                outputs.add(g(a, b))
 
-    results = [f.result() for f in futures]  # block until done
+<hr>
+
+    futures = set()                     # Parallel
+    for a in L1:
+        for b in L2:
+            if a > b:
+                outputs.add(system.submit(f, a, b))
+            else:
+                outputs.add(system.submit(g, a, b))
+
+    results = {f.result() for f in futures}
 
 
 ### Collections - Semi-structured
