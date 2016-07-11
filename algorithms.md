@@ -1,3 +1,17 @@
+Parallel Data Analysis
+----------------------
+
+*Min Ragan-Kelly*:  Simula/Jupyter
+
+*Matthew Rocklin*:  Continuum/Dask
+
+*Ben Zaitlen*:  Continuum/Deployment
+
+[scipy2016.slack.com/messages/parallelpython](https://scipy2016.slack.com/messages/parallelpython)
+
+[github.com/mrocklin/scipy-2016-parallel/](https://github.com/mrocklin/scipy-2016-parallel/)
+
+
 ## Parallel Algorithms
 
 1.  Map - The simple, common case
