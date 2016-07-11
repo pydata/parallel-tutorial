@@ -2,39 +2,35 @@
 
 ## Student Goals
 
-Students will walk away with a high-level understanding of both parallel problems and how to reason about parallel computing frameworks.
-They will also walk away with hands-on experience using a variety of frameworks easily accessible from Python.
+Students will walk away with a high-level understanding of both parallel
+problems and how to reason about parallel computing frameworks.  They will also
+walk away with hands-on experience using a variety of frameworks easily
+accessible from Python.
 
 ## Student Level
 
-Knowledge of Python and general familiarity with the Jupyter notebook are assumed.
-This is generally aimed at a beginning to intermediate audience.
+Knowledge of Python and general familiarity with the Jupyter notebook are
+assumed.  This is generally aimed at a beginning to intermediate audience.
 
 
 ## Outline
 
-For the first half, we will cover basic ideas and common patterns encountered when analyzing large
-data sets in parallel. We start by diving into a sequence of examples that require increasingly
-complex tools. From the most basic parallel API: map, we will cover some general asynchronous
-programming with Futures, and high level APIs for large data sets, such as Spark RDDs and Dask
-collections, and streaming patterns. For the second half, we focus on traits of particular parallel
-frameworks, including strategies for picking the right tool for your job. We will finish with some
-common challenges in parallel analysis, such as debugging parallel code when it goes wrong, as well
-as deployment and setup strategies.
+For the first half we cover basic ideas and common patterns in parallel
+computing, including embarrassingly parallel map, unstructured asynchronous
+submit, and large collections.
 
+For the second half we cover complications arising from distributed memory
+computing and exercise the lessons learned in the first section by running
+informative examples on provided clusters.
 
 - Part one
     - Parallel Map
     - Asynchronous Futures
     - High Level Datasets
-    - Streaming
 - Part two
     - Processes and Threads.  The GIL, inter-worker communication, and contention.
-    - Latency and overhead.  Batching, profiling.
-    - Communication mechanisms.  Sockets, MPI, Disk, IPC.
-    - Stuff that gets in the way.  Serialization, Native vs JVM, Setup, Resource Managers, Sample Configurations
-    - Debugging async and parallel code / Historical perspective
-
+    - Distributed deployment
+    - Cluster computing exercises
 
 ## Installation
 
@@ -43,7 +39,7 @@ as deployment and setup strategies.
 
     Everyone:
 
-        conda install -c conda-forge ipyparallel ujson dask distributed
+        conda install -c conda-forge ipyparallel ujson dask distributed bokeh
         pip install snakeviz
 
     Python 2 users:
