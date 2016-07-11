@@ -2,12 +2,12 @@
 
 ## Student Goals
 
-Students will walk away with a high-level understanding of both parallel problems and how to reason about parallel computing frameworks. 
+Students will walk away with a high-level understanding of both parallel problems and how to reason about parallel computing frameworks.
 They will also walk away with hands-on experience using a variety of frameworks easily accessible from Python.
 
 ## Student Level
 
-Knowledge of Python and general familiarity with the Jupyter notebook are assumed. 
+Knowledge of Python and general familiarity with the Jupyter notebook are assumed.
 This is generally aimed at a beginning to intermediate audience.
 
 
@@ -43,7 +43,7 @@ as deployment and setup strategies.
 
     Everyone:
 
-        conda install -c conda-forge ipyparallel ujson
+        conda install -c conda-forge ipyparallel ujson dask distributed
         pip install snakeviz
 
     Python 2 users:
@@ -57,6 +57,16 @@ as deployment and setup strategies.
 Test your installation:
 
     python -c 'import concurrent.futures, ipyparallel, dask, jupyter, pyspark'
+
+
+## Dataset Preparation
+
+We will generate a dataset for use locally.  This will take up about 1GB of
+space in a new local directory, `data/`.
+
+    pip install fakestockdata
+    python prep.py
+
 
 ## Sponsored Cloud Provider
 
