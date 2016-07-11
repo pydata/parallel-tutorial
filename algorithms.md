@@ -1,11 +1,19 @@
 Parallel Data Analysis
 ----------------------
 
-*Min Ragan-Kelly*:  Simula/Jupyter
+<img src="images/embarrassing.svg">
+<img src="images/shuffle.svg">
+<img src="images/reduction.svg">
 
-*Matthew Rocklin*:  Continuum/Dask
+<hr>
 
-*Ben Zaitlen*:  Continuum/Deployment
+* *Min Ragan-Kelly*:  Simula/Jupyter
+
+* *Matthew Rocklin*:  Continuum/Dask
+
+* *Ben Zaitlen*:  Continuum/Deployment
+
+<hr>
 
 [scipy2016.slack.com/messages/parallelpython](https://scipy2016.slack.com/messages/parallelpython)
 
