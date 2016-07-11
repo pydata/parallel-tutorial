@@ -32,7 +32,7 @@ def convert_to_json(d):
     print("Finished JSON: %s" % d)
 
 
-js = os.path.join('data', 'json')
+js = os.path.join(data, 'json')
 if not os.path.exists(js):
     os.mkdir(js)
     directories = sorted(glob(os.path.join(minute, '*')))
