@@ -31,6 +31,12 @@ Extreme version of multi-processing.  Lose shared disk, shared software
 environments, etc..
 
 
+Distributed Systems
+-------------------
+
+<img src="images/network.svg" width="70%">
+
+
 Communication Bandwidth
 -----------------------
 
