@@ -6,12 +6,14 @@ import json
 from fakestockdata import generate_stocks
 from concurrent.futures import ProcessPoolExecutor
 
+here = os.path.dirname(__file__)
 
-if not os.path.exists('data'):
-    os.mkdir('data')
+data = os.path.join(here, 'data')
+if not os.path.exists(data):
+    os.mkdir(data)
 
 
-minute = os.path.join('data', 'minute')
+minute = os.path.join(data, 'minute')
 if not os.path.exists(minute):
     os.mkdir(minute)
     generate_stocks(freq=pd.Timedelta(seconds=60),
@@ -28,6 +30,7 @@ def convert_to_json(d):
                 json.dump(rec, f)
                 f.write(os.linesep)
     print("Finished JSON: %s" % d)
+
 
 js = os.path.join('data', 'json')
 if not os.path.exists(js):
