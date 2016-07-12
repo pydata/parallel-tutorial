@@ -63,5 +63,3 @@ def plot_results(results):
 
     fig = plot_param_map(evaluations, evaluations['val_score'],
                    'validation score')
-    plt.scatter(np.log10(top10['C']), np.log10(top10['gamma']),
-                c='r', s=50)
