@@ -41,7 +41,7 @@ informative examples on provided clusters.
 
     Everyone:
 
-        conda install -c conda-forge ipyparallel ujson dask distributed bokeh sklearn jupyter
+        conda install -c conda-forge ipyparallel ujson dask distributed bokeh scikit-learn pytables jupyter
         pip install snakeviz dask distributed --upgrade
 
     Python 2 users:
