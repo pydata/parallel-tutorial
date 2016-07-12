@@ -1,11 +1,13 @@
 # Parallel Python: Analyzing Large Datasets
 
+
 ## Student Goals
 
 Students will walk away with a high-level understanding of both parallel
 problems and how to reason about parallel computing frameworks.  They will also
 walk away with hands-on experience using a variety of frameworks easily
 accessible from Python.
+
 
 ## Student Level
 
@@ -39,8 +41,8 @@ informative examples on provided clusters.
 
     Everyone:
 
-        conda install -c conda-forge ipyparallel ujson dask distributed bokeh
-        pip install snakeviz
+        conda install -c conda-forge ipyparallel ujson dask distributed bokeh sklearn jupyter
+        pip install snakeviz dask distributed --upgrade
 
     Python 2 users:
 
@@ -64,6 +66,38 @@ space in a new local directory, `data/`.
     python prep.py
 
 
+## Part 1: Local Notebooks
+
+Part one of this tutorial takes place on your laptop, using multiple cores.
+Run Jupyter Notebook locally and navigate to the `notebooks/` directory.
+
+    jupyter notebook
+
+The notebooks are ordered 1, 2, 3, so you can start with `01-map.ipynb`
+
+
+## Part 2: Remote Clusters
+
+Part two of this tutorial takes place on a remote cluster.
+
+Visit the following page to start an eight-node cluster:
+[http://scipy2016.jupyter.org/](http://scipy2016.jupyter.org/)
+
+If at any point your cluster fails you can always start a new one by
+re-visiting this page.
+
+*Warning: your cluster will be deleted when you close
+out.  If you want to save your work you will need to *Download* your notebooks
+explicitly.*
+
+
+## Slides
+
+Brief, high level slides exist at
+[http://mrocklin.github.com/scipy-2016-parallel/](http://mrocklin.github.com/scipy-2016-parallel/).
+
+
 ## Sponsored Cloud Provider
 
-[Google Compute Engine](https://cloud.google.com/compute/)
+We thank Google for generously providing compute credits on
+[Google Compute Engine](https://cloud.google.com/compute/).
