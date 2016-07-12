@@ -16,7 +16,7 @@ if not os.path.exists(data):
 minute = os.path.join(data, 'minute')
 if not os.path.exists(minute):
     os.mkdir(minute)
-    generate_stocks(freq=pd.Timedelta(seconds=60),
+    generate_stocks(freq=pd.Timedelta(seconds=120),
                     start=pd.Timestamp('2010-01-01'),
                     directory=minute)
 
