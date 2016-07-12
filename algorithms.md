@@ -7,7 +7,7 @@ Parallel Data Analysis
 
 <hr>
 
-* *Min Ragan-Kelly*:  Simula/Jupyter
+* *Min Ragan-Kelley*:  Simula/Jupyter
 
 * *Matthew Rocklin*:  Continuum/Dask
 
