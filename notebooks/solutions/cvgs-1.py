@@ -4,7 +4,7 @@ e = ThreadPoolExecutor()
 futures = []
 
 for split in cv_splits:
-    for params in param_space:
+    for params in param_samples:
         future = e.submit(evaluate_one, SVC, params, split)
         futures.append(future)
         
