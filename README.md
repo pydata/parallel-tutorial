@@ -34,6 +34,10 @@ informative examples on provided clusters.
     - Distributed deployment
     - Cluster computing exercises
 
+## Chat Room
+
+Stuck? Ask for help here: https://gitter.im/dask/pydata-dc-2016 
+
 ## Installation
 
 1. Install [Anaconda](https://www.continuum.io/downloads)
@@ -81,7 +85,7 @@ The notebooks are ordered 1, 2, 3, so you can start with `01-map.ipynb`
 Part two of this tutorial takes place on a remote cluster.
 
 Visit the following page to start an eight-node cluster:
-[http://scipy2016.jupyter.org/](http://scipy2016.jupyter.org/)
+[http://bigfatintegral.net/](http://bigfatintegral.net/)
 
 If at any point your cluster fails you can always start a new one by
 re-visiting this page.
