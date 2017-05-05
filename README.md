@@ -40,7 +40,7 @@ informative examples on provided clusters.
 1. Install [Anaconda](https://www.continuum.io/downloads)
 2. Create a new conda environment:
 
-        conda create -n parallel jupyter scikit-learn pandas pytables ipyparallel joblib dask distributed bokeh ujson snakeviz
+        conda create -n parallel jupyter scikit-learn pandas pytables matplotlib ipyparallel joblib dask distributed bokeh ujson snakeviz
         source activate parallel  # Linux OS/X
         activate parallel         # Windows
 

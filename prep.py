@@ -22,7 +22,7 @@ else:
 os.makedirs(os.path.join('data', 'minute'), exist_ok=True)
 
 
-stocks = ['aa', 'aapl', 'abc', 'aig', 'amgn', 'amzn', 'bwa', 'cost', 'csco', 'd',
+stocks = ['aa', 'aapl', 'aig', 'amgn', 'amzn', 'bwa', 'cost', 'csco', 'd',
           'ebay', 'emr', 'esrx', 'ge', 'goog', 'hal', 'hp', 'hpq', 'ibm',
           'jbl', 'jpm', 'met', 'nyx', 'pcg', 'usb', 'vrsn', 'yhoo']
 
