@@ -34,19 +34,21 @@ informative examples on provided clusters.
     - Distributed deployment
     - Cluster computing exercises
 
-## Chat Room
-
-Stuck? Ask for help here: https://gitter.im/dask/pydata-dc-2016 
 
 ## Installation
 
 1. Install [Anaconda](https://www.continuum.io/downloads)
-2. Update select packages
+2. Create a new conda environment:
+
+        conda create -n parallel jupyter scikit-learn pandas pytables ipyparallel joblib dask distributed bokeh ujson snakeviz
+        source activate parallel  # Linux OS/X
+        activate parallel         # Windows
+
+3. Install a few more libraries:
 
     Everyone:
 
-        conda install -c conda-forge ipyparallel ujson dask distributed bokeh scikit-learn pytables jupyter
-        pip install snakeviz dask distributed --upgrade
+        pip install pandas_datareader
 
     Python 2 users:
 
@@ -54,7 +56,7 @@ Stuck? Ask for help here: https://gitter.im/dask/pydata-dc-2016
 
     Linux/Mac users:
 
-        conda install -c quasiben spark
+        conda install -c conda-forge spark
 
 Test your installation:
 
@@ -66,7 +68,6 @@ Test your installation:
 We will generate a dataset for use locally.  This will take up about 1GB of
 space in a new local directory, `data/`.
 
-    pip install fakestockdata
     python prep.py
 
 
