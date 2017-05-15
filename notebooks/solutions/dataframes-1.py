@@ -1,3 +1,5 @@
+df = dd.read_csv('../data/minute/aa/2012-*.csv', parse_dates=['timestamp'])
+
 # what was the max value?
 max_value = df.high.max().compute()
 
@@ -12,7 +14,4 @@ df_all[df_all.high == max_value].timestamp.dt.date.compute()
 df = df.set_index('timestamp', sorted=True)
 
 # resample by hour:
-df.close.resample(pd.Timedelta(hours=1)).mean().compute()
-
-# resample by week (this will fail):
-df.close.resample(pd.Timedelta(weeks=1)).mean().compute()
+df.close.resample('1h').mean().compute()
