@@ -59,34 +59,60 @@ applies that function in parallel.
 
     system = System(initialization_parameters)
 
-    # outputs = map(function, inputs)
-    outputs = system.map(function, inputs)
+    # outputs = map(function, inputs)       # old sequential code
+    outputs = system.map(function, inputs)  # new parallel code
 
 
 ### `submit` - Unstructured
 
+    .
+    outputs = {}
     for a in L1:
         for b in L2:
             if a > b:
-                outputs.add(f(a, b))
+                outputs[a, b] = f(a, b)
             else:
-                outputs.add(g(a, b))
+                outputs[a, b] = g(a, b)
+
+    .
 
 <img src="images/unstructured.svg">
 
 No restrictions here, but also no magic.  Developer retains full control.
 
-    concurrent.futures, dask, ipyparallel, multiprocessing
+    concurrent.futures, dask, ipyparallel, airflow, luigi
+
+
+### `submit` - Unstructured
+
+    e = concurrent.futures.ThreadPoolExecutor()
+    futures = {}
+    for a in L1:
+        for b in L2:
+            if a > b:
+                futures[a, b] = e.submit(f, a, b)  # submit to background thread
+            else:
+                futures[a, b] = e.submit(g, a, b)  # submit to background thread
+
+    outputs = {k: v.result() for k, v in futures}  # block until all finished
+
+<img src="images/unstructured.svg">
+
+No restrictions here, but also no magic.  Developer retains full control.
+
+    concurrent.futures, dask, ipyparallel, airflow, luigi
+
 
 
 ### `submit` - Unstructured
 
 *  Submit tasks to framework one-by-one.
-*  Run tasks in the background and collect when finished.
+*  Tasks sit in queue until a worker thread executes them
+*  Collect result when done
 
 <hr>
 
-    future = system.submit(function, *args, **kwargs)
+    future = system.submit(function, *args, **kwargs)  # f(*args, **kwargs)
 
     ... # Do other things
 
@@ -96,7 +122,8 @@ No restrictions here, but also no magic.  Developer retains full control.
 ### `submit` - Unstructured
 
 *  Submit tasks to framework one-by-one.
-*  Run tasks in the background and collect when finished.
+*  Tasks sit in queue until a worker thread executes them
+*  Collect result when done
 
 <hr>
 
@@ -110,7 +137,8 @@ No restrictions here, but also no magic.  Developer retains full control.
 ### `submit` - Unstructured
 
 *  Submit tasks to framework one-by-one.
-*  Run tasks in the background and collect when finished.
+*  Tasks sit in queue until a worker thread executes them
+*  Collect result when done
 
 <hr>
 
@@ -138,8 +166,9 @@ No restrictions here, but also no magic.  Developer retains full control.
 ### Collections - Semi-structured
 
     (x.T.dot(x) + 1).sum()                  # big arrays
-    df.groupby(df.time).value.mean()        # big tables
     collection.map(f).groupby(key).count()  # big lists
+    df.groupby(df.time).value.mean()        # big dataframes
+    SELECT * FROM table WHERE ...           # SQL
 
 <img src="images/embarrassing.svg">
 <img src="images/shuffle.svg">
@@ -162,7 +191,7 @@ Chain operations together for complex computations
 
 Implemented by
 
-    dask, spark, big array libraries, parallel databases, etc..
+    databases, spark, dask, big array libraries, etc..
 
 
 ### Compare algorithm types
@@ -173,7 +202,7 @@ Implemented by
     *  Really consistent API
 *  Submit
     *  Most flexible solution type
-    *  Less common for frameworks, but available
+    *  Less common for distributed frameworks, but available
 *  Collections
     *  Good fit when they're a good fit
     *  Frameworks abound, some awkwardness in rewriting

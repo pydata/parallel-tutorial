@@ -57,4 +57,4 @@ These mechanisms all have associated speeds.
 <hr>
 
 *  Python Objects: 100 MB/s
-*  Numeric arrays: 2000 GB/s
+*  Numeric arrays: 2000 MB/s

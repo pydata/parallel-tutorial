@@ -1,5 +1,3 @@
-
-
 ### Final Thoughts
 
 *  Algorithms
@@ -21,7 +19,7 @@
 
 ### Support
 
-*  SciPy Conference organizers
+*  Conference organizers
 *  Continuum, Simula/Jupyter
 *  Google (for GCE credits)
 
