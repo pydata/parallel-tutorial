@@ -13,7 +13,6 @@ dependencies:
   - matplotlib
   - pandas
   - pandas-datareader
-  - pyspark
   - pytables
   - scikit-learn
   - snakeviz

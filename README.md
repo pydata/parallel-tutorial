@@ -46,10 +46,19 @@ informative examples on provided clusters.
         source activate parallel  # Linux OS/X
         activate parallel         # Windows
 
+3. If you want to use Spark (this is a large download):
+
+        conda install -c conda-forge pyspark
 
 Test your installation:
 
-    python -c 'import concurrent.futures, ipyparallel, dask, jupyter, pyspark'
+    python -c 'import concurrent.futures, ipyparallel, dask, jupyter'
+
+Download this repository:
+
+    git clone https://github.com/pydata/parallel-tutorial
+
+or download as a [zip file](https://github.com/pydata/parallel-tutorial/archive/master.zip).
 
 
 ## Dataset Preparation

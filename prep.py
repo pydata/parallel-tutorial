@@ -19,20 +19,21 @@ if WINDOWS:
 else:
     dask.set_options(get=dask.multiprocessing.get)
 
-os.makedirs(os.path.join('data', 'minute'), exist_ok=True)
+here = os.path.dirname(__file__)
+os.makedirs(os.path.join(here, 'data', 'minute'), exist_ok=True)
 
-stocks = ['aig', 'amgn', 'bwa', 'ge', 'hal', 'hp', 'hpq', 'ibm', 'jbl', 'jpm',
-          'met', 'pcg', 'usb', 'luv', 'tgt', 'agn', 'afl', 'avy', 'xom', 'aet',
-          'serv', 'al', 'b']
+stocks = ['aet', 'afl', 'aig', 'al', 'amgn', 'avy', 'b', 'bwa', 'ge',
+          'hal', 'hp', 'hpq', 'ibm', 'jbl', 'jpm', 'luv', 'met', 'pcg',
+          'tgt', 'usb', 'xom']
 
 def write_stock(symbol):
-    dirname = os.path.join('data', 'minute', symbol)
+    dirname = os.path.join(here, 'data', 'minute', symbol)
     if not os.path.exists(dirname):
         os.mkdir(dirname)
         df = dd.demo.daily_stock(symbol, '2010', '2015', freq='120s',
                                  data_source='google')
         names = [str(ts.date()) for ts in df.divisions]
-        df.to_csv(os.path.join('data', 'minute', symbol, '*.csv'),
+        df.to_csv(os.path.join(here, 'data', 'minute', symbol, '*.csv'),
                   name_function=names.__getitem__)
         print("Finished CSV: %s" % symbol)
 
@@ -54,10 +55,10 @@ def convert_to_json(d):
     print("Finished JSON: %s" % d.split(os.path.sep)[-1])
 
 
-js = os.path.join('data', 'json')
+js = os.path.join(here, 'data', 'json')
 if not os.path.exists(js):
     os.mkdir(js)
 
-directories = sorted(glob(os.path.join('data', 'minute', '*')))
+directories = sorted(glob(os.path.join(here, 'data', 'minute', '*')))
 values = [dask.delayed(convert_to_json)(d) for d in directories]
 dask.compute(values)
