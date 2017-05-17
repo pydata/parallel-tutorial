@@ -11,7 +11,7 @@ dependencies:
   - joblib
   - jupyter
   - matplotlib
-  - pandas
+  - pandas =0.19
   - pandas-datareader
   - pyspark
   - pytables
