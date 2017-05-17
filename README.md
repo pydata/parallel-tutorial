@@ -40,23 +40,10 @@ informative examples on provided clusters.
 1. Install [Anaconda](https://www.continuum.io/downloads)
 2. Create a new conda environment:
 
-        conda create -n parallel jupyter scikit-learn pandas pytables matplotlib ipyparallel joblib dask distributed bokeh ujson snakeviz
+        conda env create -f environment.yml
         source activate parallel  # Linux OS/X
         activate parallel         # Windows
 
-3. Install a few more libraries:
-
-    Everyone:
-
-        pip install pandas_datareader
-
-    Python 2 users:
-
-        conda install futures
-
-    Linux/Mac users:
-
-        conda install -c conda-forge spark
 
 Test your installation:
 

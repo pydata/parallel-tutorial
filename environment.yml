@@ -1,0 +1,21 @@
+name: parallel
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python =3.5
+  - bokeh
+  - dask
+  - distributed
+  - ipyparallel
+  - joblib
+  - jupyter
+  - matplotlib
+  - pandas
+  - pandas-datareader
+  - pyspark
+  - pytables
+  - scikit-learn
+  - snakeviz
+  - ujson
+
