@@ -73,20 +73,19 @@ The notebooks are ordered 1, 2, 3, so you can start with `01-map.ipynb`
 Part two of this tutorial takes place on a remote cluster.
 
 Visit the following page to start an eight-node cluster:
-[http://bigfatintegral.net/](http://bigfatintegral.net/)
+[https://pycon-parallel.jovyan.org/](https://pycon-parallel.jovyan.org/)
 
 If at any point your cluster fails you can always start a new one by
 re-visiting this page.
 
-*Warning: your cluster will be deleted when you close
-out.  If you want to save your work you will need to *Download* your notebooks
-explicitly.*
+*Warning: your cluster will be deleted when you close out.  If you want to save
+your work you will need to *Download* your notebooks explicitly.*
 
 
 ## Slides
 
 Brief, high level slides exist at
-[http://mrocklin.github.com/scipy-2016-parallel/](http://mrocklin.github.com/scipy-2016-parallel/).
+[http://pydata.github.io/parallel-tutorial/](http://pydata.github.io/parallel-tutorial/).
 
 
 ## Sponsored Cloud Provider
