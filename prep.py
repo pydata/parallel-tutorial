@@ -21,10 +21,9 @@ else:
 
 os.makedirs(os.path.join('data', 'minute'), exist_ok=True)
 
-
-stocks = ['aapl', 'aig', 'amgn', 'amzn', 'bwa', 'cost', 'csco', 'd',
-          'ebay', 'emr', 'esrx', 'ge', 'goog', 'hal', 'hp', 'hpq', 'ibm',
-          'jbl', 'jpm', 'met', 'pcg', 'usb', 'vrsn', 'yhoo']
+stocks = ['aig', 'amgn', 'bwa', 'ge', 'hal', 'hp', 'hpq', 'ibm', 'jbl', 'jpm',
+          'met', 'pcg', 'usb', 'luv', 'tgt', 'agn', 'afl', 'avy', 'xom', 'aet',
+          'serv', 'al', 'b']
 
 def write_stock(symbol):
     dirname = os.path.join('data', 'minute', symbol)
