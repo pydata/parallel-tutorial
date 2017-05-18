@@ -51,10 +51,40 @@ These mechanisms all have associated speeds.
 
 ## Serialization
 
-*  Turns Python objects: `'hello', np.ones(5)`
-*  Into Bytes: `00000001`
+-  Turns Python objects into bytes
 
-<hr>
+    ```python
+    >>> pickle.dumps(123)
+    b'\x80\x03K{.'
 
-*  Python Objects: 100 MB/s
-*  Numeric arrays: 2000 MB/s
+    >>> pickle.dumps(operator.add)
+    b'\x80\x03c_operator\nadd\nq\x00.'
+    ```
+-   This takes time
+
+    -  Python Objects: 100 MB/s
+    -  Numeric arrays: 2000 MB/s -> free
+
+-   Tricky for dynamic functions, files, locks, etc..
+
+    ```python
+    >>> f = open('foo')
+    >>> pickle.dumps(f)
+    TypeError: cannot serialize '_io.TextIOWrapper'
+
+    >>> cloudpickle.dumps(lambda x: x + 1)
+    b'... long and complex bytestring ...'
+    ```
+
+
+## Expectation of Uniform Environments
+
+-  Same libraries, versions, expected on all machines
+-  Often handled by something else: Kubernetes, Mesos, NFS, ...
+-  Plus small tweaks from computational libraries
+
+    ```python
+    spark_context.addFile('myscript.py')
+    dask_client.upload_file('myscript.py')
+    ```
+
