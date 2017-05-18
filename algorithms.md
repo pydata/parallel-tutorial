@@ -15,9 +15,9 @@ Parallel Data Analysis
 
 <hr>
 
-[scipy2016.slack.com/messages/parallelpython](https://scipy2016.slack.com/messages/parallelpython)
+[gitter.im/pydata/parallel-tutorial](https://gitter.im/pydata/parallel-tutorial)
 
-[github.com/mrocklin/scipy-2016-parallel/](https://github.com/mrocklin/scipy-2016-parallel/)
+[pydata.github.io/parallel-tutorial](https://pydata.github.io/parallel-tutorial)
 
 
 ## Parallel Algorithms
