@@ -39,7 +39,7 @@ informative examples on provided clusters.
 
 ## Installation
 
-1. Install [Anaconda](https://www.continuum.io/downloads)
+1. Install [Anaconda](https://www.continuum.io/downloads) (large) or [Miniconda](https://conda.io/miniconda.html) (small)
 2. Create a new conda environment:
 
         conda env create -f environment.yml
