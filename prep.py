@@ -51,7 +51,7 @@ def convert_to_json(d):
             df = pd.read_csv(fn)
             for rec in df.to_dict(orient='records'):
                 json.dump(rec, f)
-                f.write(os.linesep)
+                f.write('\n')
     print("Finished JSON: %s" % d.split(os.path.sep)[-1])
 
 
