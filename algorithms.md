@@ -7,11 +7,13 @@ Parallel Data Analysis
 
 <hr>
 
+* *Aron Ahmadia*:  Capital One
+
+* *Ben Zaitlen*:  Continuum
+
 * *Min Ragan-Kelley*:  Simula/Jupyter
 
-* *Matthew Rocklin*:  Continuum/Dask
-
-* *Ben Zaitlen*:  Continuum/Deployment
+* *Matthew Rocklin*:  Continuum
 
 <hr>
 
@@ -20,13 +22,17 @@ Parallel Data Analysis
 [pydata.github.io/parallel-tutorial](https://pydata.github.io/parallel-tutorial)
 
 
-## Parallel Algorithms
+## Outline
 
-1.  Map - The simple, common case
-
-2.  Submit - Full freedom
-
-3.  Collections - For common structures
+1.  Algorithms
+    1.  Map - The simple, common case
+    2.  Submit - Full freedom
+    3.  Collections - For common structures
+    4.  Data science application
+2.  Distributed Systems
+    1.  Extending these same APIs to larger systems
+    2.  New computation and communication costs
+    3.  Tuning and diagnostics
 
 
 ### `map` - The simple, common case
@@ -47,7 +53,20 @@ Parallel Data Analysis
 
 Implemented by *many* frameworks
 
-    concurrent.futures, dask, ipyparallel, joblib, MR, multiprocessing, spark
+    concurrent.futures, dask, ipyparallel, joblib, multiprocessing, spark
+
+
+### `map` - The simple, common case
+
+Frameworks provide a function `map` that takes a function and a sequence and
+applies that function in parallel.
+
+    from concurrent.futures import ThreadPoolExecutor
+
+    executor = ThreadPoolExecutor(max_workers=4)
+
+    # outputs = map(function, inputs)       # old sequential code
+    outputs = executor.map(function, inputs)  # new parallel code
 
 
 ### `map` - The simple, common case
@@ -182,7 +201,9 @@ No restrictions here, but also no magic.  Developer retains full control.
 *  `collection.groupby(key)`
 *  `collection.join(other_collection)`
 
-Chain operations together for complex computations
+<hr>
+
+### Chain operations together for complex computations
 
     collection.map(function)
               .filter(predicate)
@@ -204,5 +225,5 @@ Implemented by
     *  Most flexible solution type
     *  Less common for distributed frameworks, but available
 *  Collections
-    *  Good fit when they're a good fit
+    *  Convenient when the problem fits
     *  Frameworks abound, some awkwardness in rewriting

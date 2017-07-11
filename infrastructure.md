@@ -46,7 +46,7 @@ These mechanisms all have associated speeds.
 
 *  Shared memory (threads): **Infinite**
 *  Inter-Process-Communication: **300 MB/s**
-*  Ethernet:  **100 MB/s** or 1000 MB/s (optimistically)
+*  Ethernet:  **100 MB/s** to  **1000 MB/s**
 
 
 ## Serialization
@@ -63,7 +63,7 @@ These mechanisms all have associated speeds.
 -   This takes time
 
     -  Python Objects: 100 MB/s
-    -  Numeric arrays: 2000 MB/s -> free
+    -  Numeric arrays: 5000 MB/s -> free
 
 -   Tricky for dynamic functions, files, locks, etc..
 
