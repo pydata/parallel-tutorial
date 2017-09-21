@@ -3,19 +3,18 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python =3.5
+  - python =3.6
   - bokeh
-  - cloudpickle=0.2.2=py35_0
+  - cloudpickle
   - dask
   - distributed
-  - ipyparallel
   - joblib
   - jupyter
+  - jupyterlab
   - matplotlib
-  - pandas =0.19
+  - pandas
   - pandas-datareader
   - pytables
   - scikit-learn
   - snakeviz
   - ujson
-

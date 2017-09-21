@@ -1,3 +1,4 @@
+import datetime
 import os
 from glob import glob
 import pandas as pd
@@ -22,15 +23,17 @@ else:
 here = os.path.dirname(__file__)
 os.makedirs(os.path.join(here, 'data', 'minute'), exist_ok=True)
 
-stocks = ['aet', 'afl', 'aig', 'al', 'amgn', 'avy', 'b', 'bwa', 'ge',
-          'hal', 'hp', 'hpq', 'ibm', 'jbl', 'jpm', 'luv', 'met', 'pcg',
-          'tgt', 'usb', 'xom']
+stocks = ['afl', 'aig', 'al', 'avy', 'bwa',
+          'hal', 'hp', 'hpq', 'ibm', 'jbl', 'jpm', 'luv', 'pcg',
+          'usb']
 
 def write_stock(symbol):
     dirname = os.path.join(here, 'data', 'minute', symbol)
+    today = datetime.datetime.now().date()
+    year = datetime.timedelta(days=365)
     if not os.path.exists(dirname):
         os.mkdir(dirname)
-        df = dd.demo.daily_stock(symbol, '2010', '2015', freq='120s',
+        df = dd.demo.daily_stock(symbol, today - year, today, freq='20s',
                                  data_source='google')
         names = [str(ts.date()) for ts in df.divisions]
         df.to_csv(os.path.join(here, 'data', 'minute', symbol, '*.csv'),

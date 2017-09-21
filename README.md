@@ -58,7 +58,7 @@ informative examples on provided clusters.
 
 Test your installation:
 
-    python -c 'import concurrent.futures, ipyparallel, dask, jupyter'
+    python -c 'import concurrent.futures, dask, jupyter'
 
 
 ## Dataset Preparation
