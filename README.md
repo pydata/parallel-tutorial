@@ -84,7 +84,7 @@ The notebooks are ordered 1, 2, 3, so you can start with `01-map.ipynb`
 Part two of this tutorial takes place on a remote cluster.
 
 Visit the following page to start an eight-node cluster:
-[https://pycon-parallel.jovyan.org/](https://pycon-parallel.jovyan.org/)
+[https://pydata-parallel.jovyan.org/](https://pydata-parallel.jovyan.org/)
 
 If at any point your cluster fails you can always start a new one by
 re-visiting this page.
