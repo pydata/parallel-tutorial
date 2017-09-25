@@ -18,3 +18,5 @@ dependencies:
   - scikit-learn
   - snakeviz
   - ujson
+  - gcsfs
+  - ipywidgets
