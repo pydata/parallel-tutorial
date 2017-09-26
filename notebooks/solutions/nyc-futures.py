@@ -1,3 +1,4 @@
+
 # Use map or submit with the `read_row_group` function
 # on each of the row groups to get a list of futures of Pandas dataframes
 
@@ -41,6 +42,8 @@ def f(df):
     return df.passenger_count.value_counts()
 
 counts = client.map(f, futures)
+
+import pandas as pd
 
 def accumulate(results):
     result = pd.concat(results)
