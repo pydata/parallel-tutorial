@@ -32,9 +32,9 @@ informative examples on provided clusters.
     - Asynchronous Futures
     - High Level Datasets
 - Part two
-    - Processes and Threads.  The GIL, inter-worker communication, and contention.
-    - Distributed deployment
-    - Cluster computing exercises
+    -  Scaling cross validation parameter search
+    -  Tabular data with map/submit
+    -  Tabular data with dataframes
 
 
 ## Installation
@@ -45,7 +45,7 @@ informative examples on provided clusters.
 
     or download as a [zip file](https://github.com/pydata/parallel-tutorial/archive/master.zip).
 
-2. Install [Anaconda](https://www.continuum.io/downloads) (large) or [Miniconda](https://conda.io/miniconda.html) (small)
+2. Install [Anaconda](https://www.anaconda.com/downloads) (large) or [Miniconda](https://conda.io/miniconda.html) (small)
 3. Create a new conda environment:
 
         conda env create -f environment.yml
