@@ -9,11 +9,11 @@ Parallel Data Analysis
 
 * *Aron Ahmadia*:  Capital One
 
-* *Ben Zaitlen*:  Continuum
+* *Ben Zaitlen*:  Anaconda Inc.
 
 * *Min Ragan-Kelley*:  Simula/Jupyter
 
-* *Matthew Rocklin*:  Continuum
+* *Matthew Rocklin*:  Anaconda Inc.
 
 <hr>
 

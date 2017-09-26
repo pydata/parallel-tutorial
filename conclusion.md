@@ -20,7 +20,7 @@
 ### Support
 
 *  Conference organizers
-*  Continuum, Simula/Jupyter
+*  Anaconda Inc., Simula/Jupyter
 *  Google (for GCE credits)
 
 
