@@ -33,7 +33,7 @@ def write_stock(symbol):
     year = datetime.timedelta(days=365)
     if not os.path.exists(dirname):
         os.mkdir(dirname)
-        df = dd.demo.daily_stock(symbol, today - year, today, freq='20s',
+        df = dd.demo.daily_stock(symbol, today - year, today, freq='30s',
                                  data_source='google')
         names = [str(ts.date()) for ts in df.divisions]
         df.to_csv(os.path.join(here, 'data', 'minute', symbol, '*.csv'),
