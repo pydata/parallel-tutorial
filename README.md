@@ -27,6 +27,9 @@ For the second half we cover complications arising from distributed memory
 computing and exercise the lessons learned in the first section by running
 informative examples on provided clusters.
 
+A video presentation of this tutorial as part of SciPy 2017 can be found
+[here](https://www.youtube.com/watch?v=a8gpcnmggiU).
+
 - Part one
     - Parallel Map
     - Asynchronous Futures
